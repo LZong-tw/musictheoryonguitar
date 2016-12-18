@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>指板上的樂理 - 大小調</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body onload=drawClock();>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">HOME</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">大小調<span class="sr-only">(current)</span></a></li>
+        <li><a href="chords.html">和弦認識</a></li>
+        <li><a href="fret_position.html">把位</a></li>
+        <li><a href="#">節奏</a></li>
+        <li><a href="#">指形</a></li>
+        <li><a href="#">採譜</a></li>
+        <li><a href="#">和聲</a></li>
+      </ul>
+
+      <!---<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>-->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">相關連結</a></li>
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>-->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="page-header">
+  <h1>大調 <small></small></h1>
+</div>
+
+<div class="content">
+    <p>
+        我們在聽音樂時，常常可以發現，有的聽起來很悲傷、陰沉、壓抑；而有的則是開朗、明亮。這都是因為大小調的聽覺差異所造成的。
+    </p>
+    <p>
+        例如，同一個旋律我們分別用大小調彈奏出來會有不同的感受：
+    </p>
+    <audio controls>
+        <source src="audio/majorminor/major_demo.m4a" type="audio/mp4" codecs="m4a">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls>
+        <source src="audio/majorminor/minor_demo.m4a" type="audio/mp4" codecs="m4a">
+        Your browser does not support the audio element.
+    </audio>
+
+    <p>
+        我們平常所聽到的「Do, Re, Mi, Fa, Sol, La, Si(Ti), Do」，就是一個很典型的大調音階，我們可以很簡單的認識出「Do, Re, Mi, Fa, Sol, La, Si(Ti), Do」，
+    </p>
+    <audio controls>
+        <source src="audio/majorminor/major_scale.m4a" type="audio/mp4" codecs="m4a">
+        Your browser does not support the audio element.
+    </audio>
+    <p>
+        是因為他們彼此之間有固定的排列組合，如果這個排列組合用全音半音的概念來劃分的話，便是「全全半全全全半」。  
+        這一個音階，在鋼琴上最容易看出來：
+    </p>
+    <img src="image/majorminor/fullhalf.jpg" alt="">
+    <img src="image/majorminor/singname.jpg" alt="">
+    <p>
+        其中，半音的意思，便是這兩個音(琴鍵)，彼此相鄰，中間沒有其他的音。而全音，則是兩個相鄰的半音組成，我們稱這個為全音。
+    </p>
+
+    <p>
+        而這一音階，放到吉他上的來看，就是這個樣子(第一把位上)：
+    </p>
+    <img src="image/majorminor/First_scale.jpg" alt="">
+
+    <p>
+        這就是大調音階在吉他指板上的樣貌。
+    </p>
+    <p>
+        我們可以很明顯地看到，每遇到半音的地方，他的下一個音就在指板上的下一格。
+    </p>
+    <p>
+        反之，若是全音，則兩個音之間會間隔一個空格，如下圖所示：
+    </p>
+    <img src="image/majorminor/semitone.jpg" alt="">
+</div>
+
+<div class="page-header">
+  <h1>小調 <small></small></h1>
+</div>
+
+<div class="content">
+    <p>
+        在知道大調是甚麼以後，解釋小調就很簡單了。
+    </p>
+    <p>
+        小調就是將大調的第3、6、7個音給降半音，也就是：
+    </p>
+    <p>
+        「Do, Re, 降Mi, Fa, Sol, 降La, 降Si(Ti), Do」
+    </p>
+    <audio controls>
+        <source src="audio/majorminor/minor_scale.m4a" type="audio/mp4" codecs="m4a">
+        Your browser does not support the audio element.
+    </audio>
+    <p>
+        而這一音階，放到吉他上的來看，就是這個樣子(第一把位上)：
+    </p>
+    <img src="image/majorminor/Minor.jpg" alt="">
+    <p>
+        跟大調的「全全半全全全半」相比，
+    </p>
+    <p>
+        小調則是「全半全全半全全」。
+    </p>
+    <img src="image/majorminor/minor_semitone.jpg" alt="">
+</div>
+
+<div class="page-header">
+  <h1>音名、唱名 <small></small></h1>
+</div>
+
+<div class="content">
+    <p>
+        所謂音名，就是音樂上使用的音符名稱。
+    </p>
+    <p>
+        而唱名則是我們學習歌曲時，所唱音符的名稱。
+    </p>
+    <p>
+        而唱名又可以分成以下兩種：
+    </p>
+    <p style="margin-left:2em"> 
+        1.固定唱名法
+        <p style="margin-left:4em"> 
+            即固定Do的唱名法，所有的大、小調都以C大調音級的唱名讀譜。換句話說，在任何情況，C都是Do。
+        </p>
+    </p>
+    <p style="margin-left:2em">
+        2.首調唱名法
+        <p style="margin-left:4em">
+            將所有大調的主音都唱成Do；小調的主音都唱成La的方法。也是簡譜所使用的唱譜方法。
+            例如在G大調中，我們會將G念成Do。
+        </p>
+    </p>
+</div> 
+
+<div class="page-header">
+  <h1>主音 <small></small></h1>
+</div>
+
+<div class="content">
+    <p>
+        接下來讓我們來介紹主音。
+    </p>
+    <p>
+        大小調音階的第一個音，為主音。主音的音名即為調名，例如升F大調的主音就是F#。
+    </p>
+    <p>
+        使用下面的小工具能夠讓我們更快的理解。利用下拉式選單選擇大調的主音，
+    </p>
+    <p>
+        則輪盤內圈的唱名相對於外圈的音名就是首調唱名法。
+    </p>
+    <p>
+        可以注意到，大調的「全全半全全全半」和小調的「全半全全半全全」都是固定的。
+    </p>
+
+    <p><select name="shift" id="shift" onchange="selectChange();">
+        <option value="0">C</option>
+        <option value="1">C#</option>
+        <option value="2">D</option>
+        <option value="3">Eb</option>
+        <option value="4">E</option>
+        <option value="5">F</option>
+        <option value="6">F#</option>
+        <option value="7">G</option>
+        <option value="8">G#</option>
+        <option value="9">A</option>
+        <option value="10">Bb</option>
+        <option value="11">B</option>
+    </select></p>
+    <canvas id="canvas" width="512" height="512" style="background-color:#DDDDDD"></canvas>
+
+    <div id="gotop">˄</div>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#gotop").click(function(){
+                jQuery("html,body").animate({
+                    scrollTop:0
+                },1000);
+            });
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 300){
+                    $('#gotop').fadeIn("fast");
+                } else {
+                    $('#gotop').stop().fadeOut("fast");
+                }
+            });
+        });
+    
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var radius = canvas.height / 2;
+        var shiftang = 0;
+
+        ctx.translate(radius, radius);
+        radius = radius * 0.90
+        //setInterval(drawClock, 1000);
+
+        function selectChange(){
+            shiftang = (-1) * document.getElementById("shift").value;
+            drawClock();
+        }
+
+        function drawClock() {
+            ctx.arc(0, 0, radius, 0 , 2*Math.PI);
+            ctx.fillStyle = "white";
+            ctx.fill();
+        }
+
+        function drawClock() {
+            drawFace(ctx, radius);
+            drawNumbers(ctx, radius);
+            //drawTime(ctx, radius);
+            drawTurnTable(ctx, radius/1.5);
+            drawTurnNumbers(ctx, radius/1.5);
+        }
+
+        function drawNumbers(ctx, radius) {
+            var ang;
+            var num;
+            ctx.font = radius*0.15 + "px arial";
+            ctx.textBaseline="middle";
+            ctx.textAlign="center";
+            var abc = ["C#", "D", "Eb", "E", "F", "F#", "G", "G#", "A", "Bb", "B", "C"];
+            for(num= 1; num < 13; num++){
+                ang = num * Math.PI / 6;
+                ctx.rotate(ang);
+                ctx.translate(0, -radius*0.85);
+                ctx.rotate(-ang);
+                ctx.fillText(abc[num-1].toString(), 0, 0);
+                ctx.rotate(ang);
+                ctx.translate(0, radius*0.85);
+                ctx.rotate(-ang);
+            }
+        }
+
+        function drawTurnNumbers(ctx, radius) {
+            var ang;
+            var num;
+            ctx.font = radius*0.2 + "px arial";
+            ctx.textBaseline="middle";
+            ctx.textAlign="center";
+            var abc = ["Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "Sib", "Si", "Do"];
+            for(num= 1; num < 13; num++){
+                ang = num * Math.PI / 6 - shiftang * Math.PI / 6;
+                ctx.rotate(ang);
+                ctx.translate(0, -radius*0.75);
+                ctx.rotate(-ang);
+                ctx.fillText(abc[num-1].toString(), 0, 0);
+                ctx.rotate(ang);
+                ctx.translate(0, radius*0.75);
+                ctx.rotate(-ang);
+            }
+        }
+
+        function drawFace(ctx, radius) {
+            var grad;
+
+            ctx.beginPath();
+            ctx.arc(0, 0, radius, 0, 2*Math.PI);
+            ctx.fillStyle = 'white';
+            ctx.fill();
+
+            grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+            grad.addColorStop(0, '#333');
+            grad.addColorStop(0.5, 'white');
+            grad.addColorStop(1, '#333');
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = radius*0.1;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+            ctx.fillStyle = '#333';
+            ctx.fill();
+        }
+
+        function drawTurnTable(ctx, radius) {
+            var grad;
+
+            ctx.beginPath();
+            ctx.arc(0, 0, radius, 0, 2*Math.PI);
+            ctx.fillStyle = 'white';
+            ctx.fill();
+
+            grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+            grad.addColorStop(0, '#333');
+            grad.addColorStop(0.5, 'white');
+            grad.addColorStop(1, '#333');
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = radius*0.1;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+            ctx.fillStyle = '#333';
+            ctx.fill();
+        }
+    </script>
+</div>
+</body>
+</html>

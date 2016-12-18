@@ -1,0 +1,106 @@
+<style type="text/css">
+body{
+    background-image:url('plane.png');
+    background-repeat:no-repeat;
+    background-position: 2% 0%; 
+    width:350px;
+    height:500px;
+}
+
+.divbox{
+    width:380px;
+    height:90px;
+    padding:10px;
+    position: relative;
+    top:30;
+    border:0px #ccc solid;
+    float:left;
+    margin-right:0px;
+    margin-bottom:3px;
+}
+
+.spanbox{
+    width:25px;
+    height:90px;
+    position: relative;
+    top:-10;
+    left:-20;
+    padding:10px;
+    border:0px #ccc solid;
+    float:left;
+    margin-right:18px;
+}
+
+.aban{
+    position: absolute;
+    top: 0px;
+    left: 400px;
+    width:400px;
+    height:500px;
+    padding:10px;
+    border:1px #ccc dashed;
+    float:left;
+    margin-right:5px;
+    z-index:1;
+}
+</style>
+<script type="text/javascript">
+function AllowDrop(event){
+    event.preventDefault();
+}
+function Drag(event){
+    event.dataTransfer.setData("text",event.currentTarget.id);
+}
+function Drop(event){
+    event.preventDefault();
+    var data=event.dataTransfer.getData("text");
+    event.currentTarget.appendChild(document.getElementById(data));
+}
+</script>
+
+<div class="divbox">
+    <span id="Box1_1" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_2" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_3" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_4" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_5" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_6" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+</div>
+
+<div class="divbox">
+    <span id="Box1_1" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_2" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_3" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_4" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_5" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_6" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+</div>
+
+<div class="divbox">
+    <span id="Box1_1" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_2" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_3" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_4" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_5" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_6" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+</div>
+
+<div class="divbox">
+    <span id="Box1_1" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_2" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_3" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_4" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_5" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+    <span id="Box1_6" class="spanbox" ondrop="Drop(event)" ondragover="AllowDrop(event)"></span>
+</div>
+
+<div id="Abandoned" ondrop="Drop(event)" ondragover="AllowDrop(event)" class="aban">
+    <img id="Img1" src="Barre.png" draggable="true" ondragstart="Drag(event)" width="350" height="25">
+    <img id="Img2" src="dot.png" draggable="true" ondragstart="Drag(event)" width="45" height="45">
+    <img id="Img3" src="dot.png" draggable="true" ondragstart="Drag(event)" width="45" height="45">
+    <img id="Img4" src="dot.png" draggable="true" ondragstart="Drag(event)" width="45" height="45">
+    <img id="Img5" src="dot.png" draggable="true" ondragstart="Drag(event)" width="45" height="45">
+    <img id="Img6" src="dot.png" draggable="true" ondragstart="Drag(event)" width="45" height="45">
+    <img id="Img7" src="Barre.png" draggable="true" ondragstart="Drag(event)" width="150" height="45">
+</div>
+<div style="clear:both;"></div>

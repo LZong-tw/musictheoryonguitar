@@ -1,0 +1,29 @@
+<map name="planemap">
+    <area id="b11" alt="b11" title="b11" href="#" shape="rect" coords="0,35,40,150" ondrop="Drop(event)" ondragover="AllowDrop(event)" />
+    <area id="b12" alt="b12" title="b12" href="#" shape="rect" coords="41,35,105,150" ondrop="Drop(event)" ondragover="AllowDrop(event)" />
+    <area id="b13" alt="b13" title="b13" href="#" shape="rect" coords="106,35,170,150" ondrop="Drop(event)" ondragover="AllowDrop(event)" />
+    <area id="b14" alt="b14" title="b14" href="#" shape="rect" coords="171,35,235,150" ondrop="Drop(event)" ondragover="AllowDrop(event)" />
+    <area id="b15" alt="b15" title="b15" href="#" shape="rect" coords="236,35,295,150" ondrop="Drop(event)" ondragover="AllowDrop(event)" />
+    <area id="b16" alt="b16" title="b16" href="#" shape="rect" coords="296,35,336,150" ondrop="Drop(event)" ondragover="AllowDrop(event)" />
+
+    <area alt="" title="" href="#" shape="rect" coords="0,160,45,260" />
+    <area alt="" title="" href="#" shape="rect" coords="46,160,105,260" />
+    <area alt="" title="" href="#" shape="rect" coords="106,160,170,260" />
+    <area alt="" title="" href="#" shape="rect" coords="171,160,230,260" />
+    <area alt="" title="" href="#" shape="rect" coords="231,160,295,260" />
+    <area alt="" title="" href="#" shape="rect" coords="296,160,336,260" />
+
+    <area alt="" title="" href="#" shape="rect" coords="0,270,45,370" />
+    <area alt="" title="" href="#" shape="rect" coords="46,270,105,370" />
+    <area alt="" title="" href="#" shape="rect" coords="106,270,170,370" />
+    <area alt="" title="" href="#" shape="rect" coords="171,270,230,370" />
+    <area alt="" title="" href="#" shape="rect" coords="231,270,295,370" />
+    <area alt="" title="" href="#" shape="rect" coords="296,270,336,370" />
+
+    <area alt="" title="" href="#" shape="rect" coords="0,382,45,480" />
+    <area alt="" title="" href="#" shape="rect" coords="46,382,105,480" />
+    <area alt="" title="" href="#" shape="rect" coords="106,380,170,480" />
+    <area alt="" title="" href="#" shape="rect" coords="171,381,235,480" />
+    <area alt="" title="" href="#" shape="rect" coords="236,383,295,480" />
+    <area alt="" title="" href="#" shape="rect" coords="296,384,336,480" />
+</map>

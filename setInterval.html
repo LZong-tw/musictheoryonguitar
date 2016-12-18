@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轉盤</title>
+</head>
+<body onload="drawClock();">
+    <p><select name="shift" id="shift" onchange="selectChange();">
+        <option value="0">C</option>
+        <option value="1">C#</option>
+        <option value="2">D</option>
+        <option value="3">Eb</option>
+        <option value="4">E</option>
+        <option value="5">F</option>
+        <option value="6">F#</option>
+        <option value="7">G</option>
+        <option value="8">G#</option>
+        <option value="9">A</option>
+        <option value="10">Bb</option>
+        <option value="11">B</option>
+    </select></p>
+    <canvas id="canvas" width="512" height="512" style="background-color:#DDDDDD"></canvas>
+
+        <script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+var shiftang = 0;
+
+ctx.translate(radius, radius);
+radius = radius * 0.90
+//setInterval(drawClock, 1000);
+
+function selectChange(){
+    shiftang = (-1) * document.getElementById("shift").value;
+    drawClock();
+}
+
+function drawClock() {
+    ctx.arc(0, 0, radius, 0 , 2*Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+}
+
+function drawClock() {
+    drawFace(ctx, radius);
+    drawNumbers(ctx, radius);
+    //drawTime(ctx, radius);
+    drawTurnTable(ctx, radius/1.5);
+    drawTurnNumbers(ctx, radius/1.5);
+}
+
+function drawNumbers(ctx, radius) {
+    var ang;
+    var num;
+    ctx.font = radius*0.15 + "px arial";
+    ctx.textBaseline="middle";
+    ctx.textAlign="center";
+    var abc = ["C#", "D", "Eb", "E", "F", "F#", "G", "G#", "A", "Bb", "B", "C"];
+    for(num= 1; num < 13; num++){
+        ang = num * Math.PI / 6;
+        ctx.rotate(ang);
+        ctx.translate(0, -radius*0.85);
+        ctx.rotate(-ang);
+        ctx.fillText(abc[num-1].toString(), 0, 0);
+        ctx.rotate(ang);
+        ctx.translate(0, radius*0.85);
+        ctx.rotate(-ang);
+    }
+}
+
+function drawTurnNumbers(ctx, radius) {
+    var ang;
+    var num;
+    ctx.font = radius*0.2 + "px arial";
+    ctx.textBaseline="middle";
+    ctx.textAlign="center";
+    var abc = ["Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "Sib", "Si", "Do"];
+    for(num= 1; num < 13; num++){
+        ang = num * Math.PI / 6 + shiftang * Math.PI / 6;
+        ctx.rotate(ang);
+        ctx.translate(0, -radius*0.75);
+        ctx.rotate(-ang);
+        ctx.fillText(abc[num-1].toString(), 0, 0);
+        ctx.rotate(ang);
+        ctx.translate(0, radius*0.75);
+        ctx.rotate(-ang);
+    }
+}
+
+function drawFace(ctx, radius) {
+    var grad;
+
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, 2*Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+    grad.addColorStop(0, '#333');
+    grad.addColorStop(0.5, 'white');
+    grad.addColorStop(1, '#333');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = radius*0.1;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+    ctx.fillStyle = '#333';
+    ctx.fill();
+}
+
+function drawTurnTable(ctx, radius) {
+    var grad;
+
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, 2*Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+    grad.addColorStop(0, '#333');
+    grad.addColorStop(0.5, 'white');
+    grad.addColorStop(1, '#333');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = radius*0.1;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+    ctx.fillStyle = '#333';
+    ctx.fill();
+}
+    </script>
+</body>
+</html>

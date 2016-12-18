@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>指板上的樂理 - 把位</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body onload=drawClock();>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">HOME</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="majorminor.html">大小調</a></li>
+        <li><a href="chords.html">和弦認識</a></li>
+        <li class="active"><a href="#">把位<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">節奏</a></li>
+        <li><a href="#">指形</a></li>
+        <li><a href="#">採譜</a></li>
+        <li><a href="#">和聲</a></li>
+      </ul>
+
+      <!---<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>-->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">相關連結</a></li>
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>-->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="page-header">
+  <h1>把位定義 <small></small></h1>
+</div>
+
+<div class="content">
+    <p>
+        不知道大家有沒有想過，為何吉他需要這麼長的指板，這樣很多音都會重覆到啊!?
+    </p>
+    <p>
+        例如下圖，同樣顏色的音在指板上是相同的：
+    </p>
+    <img src="image/fret_position/same.jpg" alt="">
+    <p>
+        這是因為吉他可以根據情況，在不同的位置按出相同的和弦。
+    </p>
+    <p>
+        例如樂譜某段落的melody最高音是在第一弦第8品的地方，那麼我們就會希望在樂譜上同段落的音都能在第8品附近按到。
+    </p>
+    <img src="image/fret_position/on8.jpg" alt="">
+    <p>
+        又或者當根音是在第6弦的第二品，那麼我們會希望左手盡量保持在靠近指板頂端，諸如此類。
+    </p>
+    <p>
+        那麼為了稱呼這種在指板上不同段落壓弦的位置，我們就稱之為「把位」。
+    </p>
+    <p>
+        一般來說，我們會用食指所在的位置(也有一說是中指所在位置的上一品)來稱呼第幾把位，而一個把位一般跨了4~5品。
+    </p>
+    <p>
+        例如，當時指落在第五品時，稱之為第五把位。
+    </p>
+    <img src="image/fret_position/5f.jpg" alt="">
+</div>
+
+<div class="page-header">
+  <h1>把位指形 <small></small></h1>
+</div>
+
+<div class="content">
+	<p>
+        很明顯的，在不同的把位爬音階的、按和弦的指形都不一樣，換句話說，
+    </p>
+    <p>
+        細分之下我們將會擁有12種不同(每一品，及每半音一種)，然而我們並不需要去記所有的指形。
+    </p>
+    <p>
+        以下系統將能夠把指板用各自的方式劃分成五種不同的把位，當需要時再依據調性做評移即可：
+    </p>
+    <p>
+        以下系統將能夠把指板用各自的方式劃分成五種不同的把位，當需要時再依據調性做評移即可：
+    </p>
+    <p style="margin-left:2em">
+    	<a href="#CAGED">1.CAGED系統，利用開放和弦指形當參考建構而成</a>
+    </p>
+    <p style="margin-left:2em">
+    	<a href="#Mi">2.Mi系統，依照根音位置和音程關係建構而成</a>
+    </p>
+    <p style="margin-left:2em">
+    	<a href="#Sing">3.唱名系統，依照一六弦的位置建構而成</a>
+    </p>
+</div>
+
+<div class="page-header" id="CAGED">
+  <h1>CAGED系統 <small></small></h1>
+</div>
+
+<div class="content">
+	<p>
+        CAGED系統主要用在和弦指形的推算，利用CAGED系統可以快速地找出所有和弦的五種變化形態。
+    </p>
+	<p>
+        在了解CAGED系統之前，我們必須先了解指板上所有C的位置：
+    </p>
+    <img src="image/fret_position/position_C.jpg" alt="">
+    <p>
+        這時我們就能夠利用這些C找出C和弦的「Do、Mi、Sol」並按出和弦。
+    </p>
+    <p>
+        第一把位的C和弦就是我們最熟悉的開放C和弦，如下圖。
+    </p>
+    <img src="image/fret_position/CAGED_C.jpg" alt="">
+    <p>
+        再下一個C和弦的按法如下圖，我們可以看到他的按法就如同第一把位開放和弦的A。
+    </p>
+    <img src="image/fret_position/CAGED_A.jpg" alt="">
+    <p>
+        第三個C和弦的按法如下圖，我們可以看到他的按法就如同第一把位開放和弦的G。
+    </p>
+    <img src="image/fret_position/CAGED_G.jpg" alt="">
+    <p>
+        第四個C和弦的按法如下圖，我們可以看到他的按法就如同第一把位開放和弦的E。
+    </p>
+    <img src="image/fret_position/CAGED_E.jpg" alt="">
+    <p>
+        最後一個個C和弦的按法如下圖，我們可以看到他的按法就如同第一把位開放和弦的D。
+    </p>
+    <img src="image/fret_position/CAGED_D.jpg" alt="">
+    <p>
+        正因為他們的按法分別如同開放和弦的CAGED按法，因此這個系統被稱之為CAGED。
+    </p>
+    <p>
+        接下來就能夠利用這個系統來快速找和弦在不同把位如何按了。
+    </p>
+    <p>
+        尋找的方法如下：
+        <p style="margin-left:2em">
+    		1.確定你要在第幾條弦上找根音
+    	</p>
+    	<p style="margin-left:2em">
+    		2.找出那條弦上的C的位置和相對的指形
+    	</p>
+    	<p style="margin-left:2em">
+    		3.平移得到結果
+    	</p>
+    	例如，若我們想要找根音在第5弦的F和弦，那麼依照步驟來看就是：
+    	<p style="margin-left:2em">
+    		1.確定為第5弦
+    	</p>
+    	<p style="margin-left:2em">
+    		2.確定第5弦的C位置，並確定指行為A指形
+    	</p>
+    	<p style="margin-left:2em">
+    		<img src="image/fret_position/CAGED_A.jpg" alt="">
+    	</p>
+		<p style="margin-left:2em">
+    		3.找出這條弦上F的位置並且平移到那邊
+    	</p>
+    	<p style="margin-left:2em">
+    		<img src="image/fret_position/Test_F_chord.jpg" alt="">
+    	</p>
+    </p>
+</div>
+
+<div class="page-header" id="Mi">
+  <h1>Mi系統 <small></small></h1>
+</div>
+
+<div class="content">
+	<p>
+        Mi系統是利用「Pattern 1~5」來稱呼各個把位，他是五組由單音組成的音階。
+    </p>
+    <p>
+        在使用上，我們只要知道根音(主音)是在第五或第六弦上的位置，就能夠利用Mi系統判斷出要用哪種指形。
+    </p>
+    <p>
+        另外，訪間俗稱的爬音階練習大多就是指這個系統的音階練習。
+    </p>
+    <p>
+        依照1~5的順序，Mi系統的把位分別如下：
+    </p>
+    <img src="image/fret_position/Mi_System.jpg" alt="">
+    <p>
+        這個系統理解十分的容易，就是把1, 2, 4, 7, 9把位的各個音給找出來即可，但是在練習上卻是最難內化的，
+    </p>
+    <p>
+        要能夠在各個把位間移動是需要十分刻苦的練習，然而其成果也是在學習吉他上十分必須的。
+    </p>
+</div>
+
+<div class="page-header" id="Sing">
+  <h1>唱名系統 <small></small></h1>
+</div>
+
+<div class="content">
+	<p>
+        這是最簡單理解的系統，他的分隔方式就是依照第6弦當根音，找出Mi, Sol, La, Si(Ti), Re。
+    </p>
+    <p>
+        亦即，第1, 3, 5, 7, 10品來分割，再找出內部的音階，必需時向上或下延伸一品。
+    </p>
+    <p>
+        使用這種方法，指需熟記第六弦的音並且適當的平移即可。
+    </p>
+</div>
+
+<div class="page-header" id="Sing">
+  <h1>練習 <small></small></h1>
+</div>
+
+<iframe src="TestDrop/TestDaD.html"  width="900" height="600"></iframe>
+
+    <div id="gotop">˄</div>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#gotop").click(function(){
+                jQuery("html,body").animate({
+                    scrollTop:0
+                },1000);
+            });
+            $(window).scroll(function() {
+                if ( $(this).scrollTop() > 300){
+                    $('#gotop').fadeIn("fast");
+                } else {
+                    $('#gotop').stop().fadeOut("fast");
+                }
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
