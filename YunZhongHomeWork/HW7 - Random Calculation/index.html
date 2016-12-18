@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Test</title>
+<style type="text/css">
+    div{
+    	display: inline;
+    } 
+</style>
+</head>
+<body onload="set()">
+	<div id="a"></div> <div id="operator"></div> <div id="b"></div> = <input type="text" id="ans"><input type="button" id="submit" value="Send" onclick="judge()"><br>
+	<div id="show"></div>
+	<br><div id="show2"></div>
+
+	<script>
+		var a, b, orand, right = 0, wrong = 0, setWrong = 0;
+		var operators = [ '+' , '-' , '*' , '/' ];
+		var show = document.getElementById('show');
+
+		function set () {
+			setWrong = 0;
+			a = Math.floor( Math.random() * 100 );
+			b = Math.floor( Math.random() * 100 );
+			orand = Math.floor( Math.random() * 4 );
+
+			if (orand == 1){
+				if( a < b ) b = [a, a = b][0];
+			}
+			else if(orand == 3){
+				a *= b ; 
+			}
+
+			var aH = document.getElementById('a');
+			var bH = document.getElementById('b');
+			var oH = document.getElementById('operator');
+			aH.innerText = a;
+			bH.innerText = b;
+			oH.innerText = operators[ orand ];
+		}
+		
+		function judge () {
+			var ans = document.getElementById('ans').value;
+			if (orand == 0) {
+				if (ans == a + b) {
+					show.innerHTML = "Great! <br><img src='o.png'>";
+					right++;
+					set();
+				}
+				else {
+					show.innerHTML = "WRONG! <br><img src='x.png'>";
+					wrong = setWrong == 0 ? wrong + 1 : wrong;
+					setWrong = 1;
+				} 
+			}
+			else if (orand == 1) {
+				if (ans == a - b) {
+					show.innerHTML = "Great! <br><img src='o.png'>";
+					right++;
+					set();
+				}
+				else {
+					show.innerHTML = "WRONG! <br><img src='x.png'>";
+					wrong = setWrong == 0 ? wrong + 1 : wrong;
+					setWrong = 1;
+				} 
+			}
+			else if (orand == 2) {
+				if (ans == a * b) {
+					show.innerHTML = "Great! <br><img src='o.png'>";
+					right++;
+					set();
+				}
+				else {
+					show.innerHTML = "WRONG! <br><img src='x.png'>";
+					wrong = setWrong == 0 ? wrong + 1 : wrong;
+					setWrong = 1;
+				}
+			}
+			else if (orand == 3) {
+				if (ans == a / b) {
+					show.innerHTML = "Great! <br><img src='o.png'>";
+					right++;
+					set();
+				}
+				else {
+					show.innerHTML = "WRONG! <br><img src='x.png'>";
+					wrong = setWrong == 0 ? wrong + 1 : wrong;
+					setWrong = 1;
+				}
+			}
+			var show2 = document.getElementById('show2');
+			show2.innerHTML = "Correct: " + right + "<br>Wrong: " + wrong;
+		}
+	</script>	
+</body>
+</html>

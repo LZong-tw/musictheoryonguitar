@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="input1">
+	<input type="submit" value="Run Loop1" onclick="loop1()">
+	<input type="submit" value="Run Loop2" onclick="loop2()">
+	<input type="submit" value="Run Loop3" onclick="loop3()">
+
+	<div id="show"></div>
+	<div id="set"></div>
+
+	<script type="text/javascript">
+		function loop1(){
+			var x = document.getElementById('input1').value, temp = 0, str = new String();
+			var show = document.getElementById('show');
+			show.innerHTML = "You entered: " + x + "<br>";
+			var x = ( x % 2 == 0 ) ? parseInt( x ) : parseInt( x ) + 1;
+
+			for ( var i = 1 ; i <= x ; i++ ){
+				temp += i * ( i + 1 );
+				if ( i+1 < x) str += i.toString() + "*" + ( i + 1 ).toString() + "+";
+				else str += i.toString() + "*" + ( i + 1 ).toString();
+				i++;
+			}
+			var set = document.getElementById('set');
+			set.innerHTML = "<div class='box'>" + str + '=' + temp + "</div>";
+		}
+
+		function loop2(){
+			var x = document.getElementById('input1').value, temp = 0, str = new String();
+			var x = parseInt( x );
+			var i = 1 ;
+
+			while ( i <= x ){
+				temp += i * ( i + 1 );
+				if ( i < x) str += i.toString() + "*" + ( i + 1 ).toString() + "+";
+				else str += i.toString() + "*" + ( i + 1 ).toString();
+				i++;
+			}
+			var set = document.getElementById('set');
+			set.innerHTML = "<div class='box'>" + "You entered: " + x + "<br>" + str + '=' + temp + "</div>";
+		}
+
+		function loop3(){
+			var x = document.getElementById('input1').value, temp = 1, str = new String();
+			var x = parseInt( x );
+			var i = 1;
+
+			do{
+				temp *= i;
+				if ( i < x * 2 - 1 ) str += i.toString() + "*";
+				else str += i.toString();
+				i = i+2;
+			}while ( i <= x * 2 - 1 );
+			var set = document.getElementById('set');
+			set.innerHTML = "<div class='box'>" + "You entered: " + x + "<br>" + str + '=' + temp + "</div>";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>林允中</title>
+	<script type="text/javascript">
+	var back1, count = 0;
+		function gotobooks() {
+			back1 = document.getElementById('frame1').src;
+			document.getElementById('frame1').src = "http://www.books.com.tw";
+			showback();
+		}
+		function back() {
+			document.getElementById('frame1').src = back1;
+			hideback();
+		}
+		function hideback() {
+			document.getElementById('back').style.display = 'none';
+			document.getElementById('gotobooks').style.display = 'inline';
+		}
+		function showback() {
+			document.getElementById('back').style.display = 'inline';
+			document.getElementById('gotobooks').style.display = 'none';
+		}
+	</script>
+	<style type="text/css">
+		a{
+			color: grey;
+			text-decoration: none;
+		}
+		a:hover{
+			color: blue;
+		}
+		input{
+			background: green;
+			color: white;
+		}
+		.back{
+			display: none;
+			background: lightblue;
+		}
+		.name{
+			font-weight: 900;
+		}
+		.constel{
+			color: #ff6877;
+		}
+		table {
+			border-style: none;
+		}
+		td{
+			border-color: green;
+			border-style: dotted;
+		}
+	</style>
+</head>
+<body>
+	<marquee bgcolor="black" direction="right"><img src="Floppy-Small-icon.png" height="20"><font style="font-size: 36; color: white;">WELCOME</font></marquee>
+	<br>
+	<br>
+	<table border=1>
+		<tr><td class="name">姓名</td><td class="name">林允中</td></tr>
+		<tr><td class="constel">星座</td><td class="constel">水瓶座</td></tr>
+		<tr><td class="number">學號</td><td class="number">U10104025</td></tr>
+		<tr><td class="hobbit">嗜好</td><td class="hobbit">聽音樂</td></tr>
+		<tr><td>居住地</td><td>新北市</td></tr>
+	</table>
+	<br>
+	相關連結
+	<ul>
+		<li><a href="http://ciongzo.com" target="blank">衝組</a></li>
+		<li><a href="http://www.utaipei.edu.tw" target="blank">臺北市立大學</a></li>
+		<li><a href="http://google.com" target="blank">GOOGLE</a></li>
+	</ul>
+
+	iFrame: <input id="gotobooks" type="button" value="博客來BOOKS" onclick="gotobooks()">
+	<input id="back" type="button" value="BACK" onclick="back()" class="back">
+	<br>
+	<iframe src="http://www.thenewslens.com/" height="300" width="300" id="frame1"></iframe>
+
+
+</body>
+</html>

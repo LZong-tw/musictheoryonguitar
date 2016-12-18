@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoShow</title>
+    <script type="text/javascript">
+        var filename = new Array("a.jpg", "b.jpg", "c.jpg", "d.jpg");
+        var sw = 0,
+            id, clear = 0;
+
+        function autoshow() {
+            if (clear == 0) {
+                sw = (sw < filename.length - 1) ? sw + 1 : 0;
+                document.images[0].src = filename[ sw % 4 ];
+                document.images[1].src = filename[ ( sw + 1 ) % 4 ];
+                document.images[2].src = filename[ ( sw + 2 ) % 4 ];
+                id = setTimeout("autoshow()", 100);
+            }
+        }
+
+        function clearauto() {
+            clear = 1;
+        }
+
+        function setauto() {
+            clear = 0;
+            autoshow();
+        }
+
+        function iFrameName() {
+            var iFrame=document.getElementById('frame');
+            iFrame.setAttribute("src", "si.html#name")
+        }
+
+        function iFrameFavor() {
+            var iFrame=document.getElementById('frame');
+            iFrame.setAttribute("src", "si.html#favor")
+        }
+    </script>
+</head>
+<body>
+    <iframe id="frame" src="si.html" width="300" height="50" scrolling="no">Your browser doesn't support iFrame.</iframe>
+    <table>
+        <tr>
+            <td>
+                <img src="a.jpg">
+            </td>
+            <td>
+                <img src="b.jpg">
+            </td>
+            <td>
+                <img src="c.jpg">
+            </td>
+        </tr>
+    </table>
+    <input type="button" value="Click for Autoshowing" onclick="setauto()">
+    <input type="button" value="Stop Autoshowing" onclick="clearauto()">
+    <input type="button" value="Name" onclick="iFrameName()">
+    <input type="button" value="Favor" onclick="iFrameFavor()">
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tai-Gi Kau-Hak</title>
+	<style type="text/css">
+		.box{
+			border: dashed 1px #00aaff;
+			margin: 10px;
+			padding: 5px;
+			color: #004466;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		button
+	-->
+	<P id="showText">Not be clicked yet.</P>
+	<input type="button" id="btn1" value="BTN1" onclick="no1_clicked()">
+	<input type="button" id="btn2" value="BTN2" onclick="no2_clicked()">
+	<!--
+		selections
+	-->
+	<form name="test" id="test">
+		<br>
+		Which instrument is <b>NOT THE MOST</b> necessary in a POP/ROCK band? <br>
+		<input type="radio" name="q1" value="guitar">A. Guitar <br>
+		<input type="radio" name="q1" value="bass">B. Bass <br>
+		<input type="radio" name="q1" value="sampler">C. Sampler <br>
+		<input type="radio" name="q1" value="syn">D. Synthesizer <br>
+		<br>
+		Which genre<b>s</b> are so called ROCK MUSIC?<br>
+		<input type="checkbox" name="genre" value="hr">A. Hard Rock <br>
+		<input type="checkbox" name="genre" value="hm">B. Heavy Metal <br>
+		<input type="checkbox" name="genre" value="hr">C. Punk <br>
+		<input type="checkbox" name="genre" value="hr">D. POP <br>
+		<input type="checkbox" name="genre" value="hr">E. Hip Hop <br>
+		<input type="button" id="send" value="Send" onclick="checkans()">
+	</form>
+	<p id="score"></p>
+	<!--
+		textarea
+	-->
+	Leave some words:<br>
+	<textarea rows="5" cols="30" id="textbox"></textarea>
+	<br>
+	<input type="button" value="Submit" onclick="show()">
+	<div id="showarea"></div>
+
+	<script type="text/javascript">
+		//button
+		var showText=document.getElementById("showText");
+
+		function no1_clicked() {
+			var btn1=document.getElementById("btn1");
+			showText.innerText="BTN1 clicked.";
+		}
+
+		function no2_clicked() {
+			var btn2=document.getElementById("btn2");
+			showText.innerText="BTN2 clicked.";
+		}
+		//selections
+		var ans=[0,0,1,0,1,1,1,0,0];
+
+		function checkans(){
+			var test=document.getElementById("test");
+			var get=document.getElementById("send");
+			var score=document.getElementById("score");
+			var score1=10;
+
+			for ( var i = 0 ; i < test.q1.length ; i++) {
+				if (test.q1[i].checked==ans[i]) {
+					score1+=10;
+				}
+			}
+			for ( var i = 0 ; i < test.genre.length ; i++) {
+				if (test.genre[i].checked==ans[i+4]) {
+					score1 += 10;
+				}
+			}
+			score.innerHTML="You got " + score1 + "/100";
+		}
+		//textarea
+		var floors=0;
+		function show(){
+			floors+=1;
+			var get=document.getElementById('textbox');
+			var set=document.getElementById('showarea');
+
+			set.innerHTML += "<div class='box'>B" + floors + ":" + get.value + "</div>";
+		}
+	</script>
+</body>
+</html>
