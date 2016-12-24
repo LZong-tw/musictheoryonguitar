@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drag Page</title>
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <script src="../js/jquery-1.9.1.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+	    $(function() {
+	        $("#dot1, #dot2, #dot3, #dot4, #bar").draggable();
+	    });
+	    function getPostition(){
+	    	var position1 = $('#dot1').offset();  
+			var x = position1.left;  
+			var y = position1.top;  
+			console.log('dot1 position = x:'+x+', y:'+y); 
+
+	    	var position2 = $('#dot2').offset();  
+			var x = position2.left;  
+			var y = position2.top;  
+			console.log('dot2 position = x:'+x+', y:'+y); 
+
+	    	var position3 = $('#dot3').offset();  
+			var x = position3.left;  
+			var y = position3.top;  
+			console.log('dot3 position = x:'+x+', y:'+y); 
+
+	    	var position4 = $('#dot4').offset();  
+			var x = position4.left;  
+			var y = position4.top;  
+			console.log('dot4 position = x:'+x+', y:'+y); 
+
+	    	var position5 = $('#bar').offset();  
+			var x = position5.left;  
+			var y = position5.top;  
+			console.log('bar position = x:'+x+', y:'+y); 
+
+
+		}
+		/*檢查答案的方法：正確的位置設一陣列，若檢查到有點在正確的位置上，則從正確的位置中移除該點，並將之移入答案的陣列中，最後檢查正確答案陣列是否已空，同時檢查答案陣列數是否正確*/
+		function checkAns(){
+		}
+		function cheachD1(){
+			var position1 = $('#dot1').offset();  
+			var x = position1.left;  
+			var y = position1.top;  
+			console.log('dot1 position = x:'+x+', y:'+y); 
+			if (x>12 && y>12 && x<77 && y<53) {
+				return 1;
+			}
+			else {
+				return 0;
+			}
+		}
+		function cheachD1(){
+			var position1 = $('#dot1').offset();  
+			var x = position1.left;  
+			var y = position1.top;  
+			console.log('dot1 position = x:'+x+', y:'+y); 
+			if (x>12 && y>12 && x<77 && y<53) {
+				return 1;
+			}
+			else {
+				return 0;
+			}
+		}
+		function cheachD2(){
+			var position1 = $('#dot2').offset();  
+			var x = position1.left;  
+			var y = position1.top;  
+			console.log('dot2 position = x:'+x+', y:'+y); 
+			if (x>12 && y>12 && x<77 && y<53) {
+				return 1;
+			}
+			else {
+				return 0;
+			}
+		}
+		function cheachD3(){
+			var position1 = $('#dot3').offset();  
+			var x = position1.left;  
+			var y = position1.top;  
+			console.log('dot3 position = x:'+x+', y:'+y); 
+			if (x>12 && y>12 && x<77 && y<53) {
+				return 1;
+			}
+			else {
+				return 0;
+			}
+		}
+		function cheachD4(){
+			var position1 = $('#dot4').offset();  
+			var x = position1.left;  
+			var y = position1.top;  
+			console.log('dot4 position = x:'+x+', y:'+y); 
+			if (x>12 && y>12 && x<77 && y<53) {
+				return 1;
+			}
+			else {
+				return 0;
+			}
+		}
+		function cheachBar(){
+			var position1 = $('#bar').offset();  
+			var x = position1.left;  
+			var y = position1.top;  
+			console.log('bar position = x:'+x+', y:'+y); 
+			if (x>12 && y>12 && x<77 && y<53) {
+				return 1;
+			}
+			else {
+				return 0;
+			}
+		}
+    </script>
+    <style>
+	    div{
+	    	border-radius:15px;
+	        background-color: black;
+	    }
+	    .dot{
+	    	border-radius:20px;
+	        background-color: black;
+	    }
+	    .table1{
+	    	width: 450px;
+	    	height: 250px;
+	    	border:3px black groove;
+	    	border-collapse:collapse;
+	    }
+	    .td1{
+	   		border:3px black groove;
+	    }
+    </style>
+</head>
+
+<body>
+	<table class="table1">
+		<tr>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+		</tr>
+		<tr>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+		</tr>
+		<tr>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+		</tr>
+		<tr>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+		</tr>
+		<tr>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+		</tr>
+		<tr>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+			<td class="td1"></td>
+		</tr>
+	</table>
+	<br><br>
+	<table>
+		<tr><td><div id="dot1" class="dot" style="width: 40px; height: 40px;">&nbsp;</div></td><td><div id="dot2" class="dot" style="width: 40px; height: 40px;">&nbsp;</div></td><td><div id="dot3" class="dot" style="width: 40px; height: 40px;">&nbsp;</div></td><td><div id="dot4" class="dot" style="width: 40px; height: 40px;">&nbsp;</div></td></tr>
+	</table>	
+	<div id="bar" class="bar" style="width: 40px; height: 300px;">&nbsp;</div>
+	<input type="button" onclick="getPostition();" value="Get">
+	<input type="button" onclick="cheachD1();" value="CHECK">
+</body>
+
+</html>
