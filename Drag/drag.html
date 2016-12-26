@@ -7,10 +7,18 @@
     <link rel="stylesheet" href="../css/jquery-ui.css">
     <script src="../js/jquery-1.9.1.js"></script>
     <script src="../js/jquery-ui.js"></script>
-    <script>
+    <!-- 最新編譯和最佳化的 CSS -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<!-- 選擇性佈景主題 -->
+	<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	<!-- 最新編譯和最佳化的 JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+    <script> 
 	    $(function() {
-	        $("#dot1, #dot2, #dot3, #dot4, #bar").draggable();
+	        /*$("#dot1, #dot2, #dot3, #dot4, #bar").draggable();*/
+	        $("#dot1, #dot2, #dot3, #bar").draggable();
 	    });
+	    var dot1x, dot1y, dot2x, dot2y, dot3x, dot3y, score = 0;
 	    function getPostition(){
 	    	var position1 = $('#dot1').offset();  
 			var x = position1.left;  
@@ -22,7 +30,7 @@
 			var y = position2.top;  
 			console.log('dot2 position = x:'+x+', y:'+y); 
 
-	    	var position3 = $('#dot3').offset();  
+	    	/*var position3 = $('#dot3').offset();  
 			var x = position3.left;  
 			var y = position3.top;  
 			console.log('dot3 position = x:'+x+', y:'+y); 
@@ -35,62 +43,56 @@
 	    	var position5 = $('#bar').offset();  
 			var x = position5.left;  
 			var y = position5.top;  
-			console.log('bar position = x:'+x+', y:'+y); 
-
-
+			console.log('bar position = x:'+x+', y:'+y); */
 		}
 		/*檢查答案的方法：正確的位置設一陣列，若檢查到有點在正確的位置上，則從正確的位置中移除該點，並將之移入答案的陣列中，最後檢查正確答案陣列是否已空，同時檢查答案陣列數是否正確*/
 		function checkAns(){
-		}
-		function cheachD1(){
-			var position1 = $('#dot1').offset();  
-			var x = position1.left;  
-			var y = position1.top;  
-			console.log('dot1 position = x:'+x+', y:'+y); 
-			if (x>12 && y>12 && x<77 && y<53) {
-				return 1;
+			/*Em*/
+			getD1();
+			getD2();
+			if (dot1x>137 && dot1y>184 && dot1x<201 && dot1y<208) {
+				if(dot2x>136 && dot2y>233 && dot2x<202 && dot2y<260){
+					score += 10;
+					console.log("You're right!");
+					problem1(1);
+				}
+				else {
+					console.log('Wrong!');
+					problem1(0);
+				}
+			}
+			else if (dot2x>137 && dot2y>184 && dot2x<201 && dot2y<208) {
+				if(dot1x>136 && dot1y>233 && dot1x<202 && dot1y<260){
+					score += 10;
+					console.log("You're right!");
+					problem1(1);
+				}
+				else {
+					console.log('Wrong!');
+					problem1(0);
+				}
 			}
 			else {
-				return 0;
+				console.log('Wrong!');
+				problem1(0);
 			}
 		}
-		function cheachD1(){
+		function getD1(){
 			var position1 = $('#dot1').offset();  
-			var x = position1.left;  
-			var y = position1.top;  
-			console.log('dot1 position = x:'+x+', y:'+y); 
-			if (x>12 && y>12 && x<77 && y<53) {
-				return 1;
-			}
-			else {
-				return 0;
-			}
+			dot1x = position1.left;  
+			dot1y = position1.top;  
 		}
-		function cheachD2(){
+		function getD2(){
 			var position1 = $('#dot2').offset();  
-			var x = position1.left;  
-			var y = position1.top;  
-			console.log('dot2 position = x:'+x+', y:'+y); 
-			if (x>12 && y>12 && x<77 && y<53) {
-				return 1;
-			}
-			else {
-				return 0;
-			}
+			dot2x = position1.left;  
+			dot2y = position1.top;  
 		}
-		function cheachD3(){
+		function getD3(){
 			var position1 = $('#dot3').offset();  
-			var x = position1.left;  
-			var y = position1.top;  
-			console.log('dot3 position = x:'+x+', y:'+y); 
-			if (x>12 && y>12 && x<77 && y<53) {
-				return 1;
-			}
-			else {
-				return 0;
-			}
+			dot3x = position1.left;  
+			dot3y = position1.top;  
 		}
-		function cheachD4(){
+		/*function checkD4(){
 			var position1 = $('#dot4').offset();  
 			var x = position1.left;  
 			var y = position1.top;  
@@ -102,7 +104,7 @@
 				return 0;
 			}
 		}
-		function cheachBar(){
+		function checkBar(){
 			var position1 = $('#bar').offset();  
 			var x = position1.left;  
 			var y = position1.top;  
@@ -113,12 +115,29 @@
 			else {
 				return 0;
 			}
+		}*/
+		function problem1(s){
+			if(s == 1){
+				 $("#show").html("<strong><p><font color='green'><big><big><big><big>對了!!</big></big></big></big></font></p></strong>");
+				 console.log('Gotcha');
+				 $("#dot3").hide();
+				 $("#bar").hide();
+			}
+			else{
+				$("#show").html("<p><font color='red'><strong><big><big><big>錯了!</big></big></big></strong></font></p>");
+				console.log('GOOOOOOOTCHA');
+				$("#dot3").hide();
+				$("#bar").hide();
+			}
 		}
     </script>
     <style>
 	    div{
 	    	border-radius:15px;
 	        background-color: black;
+	    }
+	    .show{
+	    	background-color: white;
 	    }
 	    .dot{
 	    	border-radius:20px;
@@ -132,11 +151,14 @@
 	    }
 	    .td1{
 	   		border:3px black groove;
+	   		width: 112.5px;
+	   		height: 50px;
 	    }
     </style>
 </head>
 
 <body>
+	<h4>請拖拉出Em和弦的指形&nbsp;&nbsp;<input type="button" onclick="checkAns();" value="送出答案"></h4>
 	<table class="table1">
 		<tr>
 			<td class="td1"></td>
@@ -153,13 +175,7 @@
 		<tr>
 			<td class="td1"></td>
 			<td class="td1"></td>
-			<td class="td1"></td>
-			<td class="td1"></td>
-		</tr>
-		<tr>
-			<td class="td1"></td>
-			<td class="td1"></td>
-			<td class="td1"></td>
+			<td class="td1"><center><span class="glyphicon glyphicon-record" aria-hidden="true"></span></center></td>
 			<td class="td1"></td>
 		</tr>
 		<tr>
@@ -175,13 +191,14 @@
 			<td class="td1"></td>
 		</tr>
 	</table>
-	<br><br>
+	<br>
 	<table>
-		<tr><td><div id="dot1" class="dot" style="width: 40px; height: 40px;">&nbsp;</div></td><td><div id="dot2" class="dot" style="width: 40px; height: 40px;">&nbsp;</div></td><td><div id="dot3" class="dot" style="width: 40px; height: 40px;">&nbsp;</div></td><td><div id="dot4" class="dot" style="width: 40px; height: 40px;">&nbsp;</div></td></tr>
+		<tr><td><div id="dot1" class="dot" style="width: 40px; height: 40px;">&nbsp;</div></td><td><div id="dot2" class="dot" style="width: 40px; height: 40px;">&nbsp;</div></td><td><div id="dot3" class="dot" style="width: 40px; height: 40px;">&nbsp;</div><!--</td><td><div id="dot4" class="dot" style="width: 40px; height: 40px;">&nbsp;</div>--></td></tr>
 	</table>	
 	<div id="bar" class="bar" style="width: 40px; height: 300px;">&nbsp;</div>
-	<input type="button" onclick="getPostition();" value="Get">
-	<input type="button" onclick="cheachD1();" value="CHECK">
+	<div id="show" class="show"></div>
+	<!--<input type="button" onclick="getPostition();" value="Get">-->
+	<!--<input type="button" onclick="checkD1();" value="CHECK">-->
 </body>
 
 </html>
