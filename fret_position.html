@@ -27,9 +27,8 @@
         <li><a href="majorminor.html">大小調</a></li>
         <li><a href="chords.html">和弦認識</a></li>
         <li class="active"><a href="#">把位<span class="sr-only">(current)</span></a></li>
-        <li><a href="spectral.html">譜式</a></li>
-        <li><a href="shapes.html">指形</a></li>
         <li><a href="#">節奏</a></li>
+        <li><a href="#">指形</a></li>
         <li><a href="#">採譜</a></li>
         <li><a href="#">和聲</a></li>
       </ul>
@@ -236,11 +235,113 @@
   <h1>練習 <small></small></h1>
 </div>
 
+<div class="page-header" id="Sing">
+  <h1>隨堂練習 <small></small></h1>
+</div>
+
+<div class="content">
+    <p>
+        請問以下和弦為何?
+    </p>
+        <img src="image/fret_position/3frG.jpg" alt=""><br>
+        <p id="ques1">
+            <input type="radio" name="q1" value="1" onclick="q1ans=1;" selected=""><span id="q21">C</span>&nbsp;
+            <input type="radio" name="q1" value="2" onclick="q1ans=2;" selected=""><span id="q22">D</span>&nbsp;
+            <input type="radio" name="q1" value="3" onclick="q1ans=3;" selected=""><span id="q23">G</span>&nbsp;
+            <input type="radio" name="q1" value="4" onclick="q1ans=4;" selected=""><span id="q24">A</span>&nbsp;
+        </p>
+        <img src="image/fret_position/5frD.jpg" alt=""><br>
+        <p id="ques2">
+            <input type="radio" name="q2" value="1" onclick="q2ans=1;" selected=""><span id="q21">C</span>&nbsp;
+            <input type="radio" name="q2" value="2" onclick="q2ans=2;" selected=""><span id="q22">D</span>&nbsp;
+            <input type="radio" name="q2" value="3" onclick="q2ans=3;" selected=""><span id="q23">G</span>&nbsp;
+            <input type="radio" name="q2" value="4" onclick="q2ans=4;" selected=""><span id="q24">A</span>&nbsp;
+        </p>
+        <img src="image/fret_position/5frC.jpg" alt=""><br>
+        <p id="ques3">
+            <input type="radio" name="q3" value="1" onclick="q3ans=1;" selected=""><span id="q31">C</span>&nbsp;
+            <input type="radio" name="q3" value="2" onclick="q3ans=2;" selected=""><span id="q32">D</span>&nbsp;
+            <input type="radio" name="q3" value="3" onclick="q3ans=3;" selected=""><span id="q33">G</span>&nbsp;
+            <input type="radio" name="q3" value="4" onclick="q3ans=4;" selected=""><span id="q34">A</span>&nbsp;
+        </p>
+        <p>
+            <button id="Check" onclick="checkans();">Check answer</button>
+        </p>
+</div>
+
 <iframe src="TestDrop/TestDaD.html"  width="900" height="600"></iframe>
 
     <div id="gotop">˄</div>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
+        var q1ans = 0;
+        var q2ans = 0;
+        var q3ans = 0;
+        var err1 = "";
+        var err2 = "";
+        var err3 = "";
+        function checkans(){
+            if(q1ans==3){
+                document.getElementById("ques1").innerHTML = 'Yes!';
+            }else{
+                switch(q1ans){
+                    case 1:
+                        err1 = "your answer is : C";
+                        break;
+                    case 2:
+                        err1 = "your answer is : D";
+                        break;
+                    case 4:
+                        err1 = "your answer is : A";
+                        break;
+                    default:
+                        err1 = "please select an answer";
+                }
+                err1 += ", correct answer is : G";
+                document.getElementById("ques1").innerHTML = err1;
+            }
+
+            if(q2ans==2){
+                document.getElementById("ques2").innerHTML = 'Yes!';
+            }else{
+                switch(q2ans){
+                    case 1:
+                        err2 = "your answer is : C";
+                        break;
+                    case 3:
+                        err2 = "your answer is : G";
+                        break;
+                    case 4:
+                        err2 = "your answer is : A";
+                        break;
+                    default:
+                        err2 = "please select an answer";
+                }
+                err2 += ", correct answer is : D";
+                document.getElementById("ques2").innerHTML = err2;
+            }
+
+            if(q3ans==1){
+                document.getElementById("ques3").innerHTML = 'Yes!';
+            }else{
+                switch(q3ans){
+                    case 3:
+                        err3 = "your answer is : G";
+                        break;
+                    case 2:
+                        err3 = "your answer is : D";
+                        break;
+                    case 4:
+                        err3 = "your answer is : A";
+                        break;
+                    default:
+                        err3 = "please select an answer";
+                }
+                err3 += ", correct answer is : C";
+                document.getElementById("ques3").innerHTML = err3;
+            }
+        }
+
         $(function(){
             $("#gotop").click(function(){
                 jQuery("html,body").animate({

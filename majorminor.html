@@ -27,9 +27,8 @@
         <li class="active"><a href="#">大小調<span class="sr-only">(current)</span></a></li>
         <li><a href="chords.html">和弦認識</a></li>
         <li><a href="fret_position.html">把位</a></li>
-        <li><a href="spectral.html">譜式</a></li>
-        <li><a href="shapes.html">指形</a></li>
         <li><a href="#">節奏</a></li>
+        <li><a href="#">指形</a></li>
         <li><a href="#">採譜</a></li>
         <li><a href="#">和聲</a></li>
       </ul>
@@ -68,14 +67,18 @@
     <p>
         例如，同一個旋律我們分別用大小調彈奏出來會有不同的感受：
     </p>
+    <p>1.大調
     <audio controls>
         <source src="audio/majorminor/major_demo.m4a" type="audio/mp4" codecs="m4a">
         Your browser does not support the audio element.
     </audio>
+    </p>
+    <p>2.小調
     <audio controls>
         <source src="audio/majorminor/minor_demo.m4a" type="audio/mp4" codecs="m4a">
         Your browser does not support the audio element.
     </audio>
+    </p>
 
     <p>
         我們平常所聽到的「Do, Re, Mi, Fa, Sol, La, Si(Ti), Do」，就是一個很典型的大調音階，我們可以很簡單的認識出「Do, Re, Mi, Fa, Sol, La, Si(Ti), Do」，
@@ -208,9 +211,51 @@
     </select></p>
     <canvas id="canvas" width="512" height="512" style="background-color:#DDDDDD"></canvas>
 
+    <div class="page-header">
+        <h1>隨堂測驗 <small></small></h1>
+    </div>
+
+    <div class="content">
+        <p>
+            請問以下樂曲是大調或小調?
+        </p>
+        <p id="ques1">
+            <audio controls>
+                <source src="audio/majorminor/ARIA.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <input type="button" id="major_yes" value="Major" onclick="Major_cor()">
+            <input type="button" id="major_no" value="minor" onclick="Major_fal()">
+        </p>
+        <p id="ques2">
+            <audio controls>
+                <source src="audio/majorminor/queen.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <input type="button" id="minor_no" value="Major" onclick="minor_cor()">
+            <input type="button" id="minor_yes" value="minor" onclick="minor_fal()">
+        </p>
+    </div>
+
     <div id="gotop">˄</div>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script type="text/javascript">
+        function Major_cor(){
+            document.getElementById("ques1").innerHTML = 'Yes!';
+        }
+
+        function Major_fal(){
+            document.getElementById("ques1").innerHTML = 'No!';
+        }
+
+        function minor_cor(){
+            document.getElementById("ques2").innerHTML = 'No!';
+        }
+
+        function minor_fal(){
+            document.getElementById("ques2").innerHTML = 'Yes!';
+        }
+
         $(function(){
             $("#gotop").click(function(){
                 jQuery("html,body").animate({
